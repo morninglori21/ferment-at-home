@@ -157,7 +157,7 @@
 }
 
 .faq-cat--active {
-  border-style: solid;
+  border-bottom-style: solid;
 }
 
 .faq-cat span {
