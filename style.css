@@ -1,0 +1,1025 @@
+/* ============================================================
+   Ferment at Home — Main Stylesheet
+   Design: Figma / Ferment at Home UI Mockup 2025
+   ============================================================ */
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --primary-700:   #B0332B;
+  --primary-200:   #F9D2CF;
+  --secondary-50:  #FFF6ED;
+  --secondary-300: #FFBA84;
+  --gray-0:        #FFFFFF;
+  --gray-950:      #121212;
+
+  --font-display: 'Darumadrop One', sans-serif;
+  --font-body:    'Noto Sans TC', sans-serif;
+
+  --max-width: 1296px;
+  --section-px: 48px;
+  --section-py: 64px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--gray-950);
+  background: var(--gray-0);
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Shared: Section Title ──────────────────────────────────── */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.section-title h2 {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--primary-700);
+  letter-spacing: 0.784px;
+  white-space: nowrap;
+}
+
+.section-title-line {
+  height: 24px;
+  overflow: visible;
+}
+
+.section-title-line img {
+  width: auto;
+  height: 100%;
+}
+
+/* ── Shared: Curved Line Separator ─────────────────────────── */
+.curved-line {
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.curved-line img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Shared: Buttons ────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary-700);
+  color: var(--gray-0);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.224px;
+  border: 2px solid transparent;
+  border-radius: 1000px;
+  padding: 12px 24px;
+  height: 48px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-primary:hover {
+  background: var(--gray-0);
+  color: var(--primary-700);
+  border-color: var(--primary-700);
+}
+
+.btn-primary:hover img {
+  /* Turn white arrow → #B0332B (primary-700) */
+  filter: brightness(0) saturate(100%) invert(27%) sepia(61%) saturate(874%) hue-rotate(332deg) brightness(87%) contrast(101%);
+}
+
+.btn-primary:active {
+  background: #6B1E1A;
+  color: var(--gray-0);
+  border-color: transparent;
+}
+
+.btn-primary:disabled,
+.btn-primary[disabled] {
+  background: var(--primary-200);
+  color: #C89190;
+  border-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Scroll Animations ──────────────────────────────────────── */
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(40px);
+}
+
+[data-animate="slide-left"] {
+  transform: translateX(-60px);
+}
+
+[data-animate="slide-right"] {
+  transform: translateX(60px);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ── Story Video ────────────────────────────────────────────── */
+.story-video {
+  width: 100%;
+  aspect-ratio: 856 / 478;
+  border-radius: 40px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Step Videos ────────────────────────────────────────────── */
+.step-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+/* ============================================================
+   TOP NAV
+   ============================================================ */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 16px 24px;
+  height: 88px;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.logo-pizza {
+  width: 50px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.logo-text {
+  width: 110px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-950);
+  padding: 12px 0;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-700);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 200px;
+  overflow: visible;
+  perspective: 1200px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Large pizza banner: center at hero bottom, extends slightly below */
+.hero-pizza-banner {
+  position: absolute;
+  bottom: -648px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1296px;
+  height: 1296px;
+  pointer-events: none;
+  z-index: 1;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hero-pizza-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Specular glare overlay */
+.pizza-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.06) 40%,
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Orbit pivot anchored at pizza center (50%, 900px from hero top) */
+.hero-title-orbit {
+  position: absolute;
+  left: 50%;
+  top: 900px;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  animation: title-orbit 12s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes title-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Each title sits at the same orbital distance; nth-child pre-rotates by 120° steps */
+.hero-title {
+  position: absolute;
+  left: -395px;
+  top: -698px;
+  width: 790px;
+  height: 150px;
+  /* transform-origin points to pizza center (395px right, 698px down from title top-left) */
+  transform-origin: 395px 698px;
+}
+
+.hero-title:nth-child(2) { transform: rotate(90deg); }
+.hero-title:nth-child(3) { transform: rotate(180deg); }
+.hero-title:nth-child(4) { transform: rotate(270deg); }
+
+.hero-title img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-cta {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-0);
+  border: 2px solid var(--primary-700);
+  color: var(--primary-700);
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.252px;
+  border-radius: 1000px;
+  padding: 20px 40px;
+  height: 64px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.hero-cta {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: var(--primary-700);
+  color: var(--gray-0);
+}
+
+.hero-cta:active {
+  background: #6B1E1A;
+  border-color: #6B1E1A;
+  color: var(--gray-0);
+}
+
+/* ============================================================
+   LATEST NEWS
+   ============================================================ */
+.section-news {
+  position: relative;
+  z-index: 2;
+  padding: var(--section-py) var(--section-px);
+  padding-top: calc(var(--section-py) + 100px); /* clear pizza banner overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--gray-0);
+}
+
+.section-news .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.news-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 2px dashed var(--secondary-300);
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.news-card:hover .news-title {
+  color: var(--primary-700);
+}
+
+
+.news-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-50);
+  border-radius: 1000px;
+  padding: 8px 16px;
+  min-height: 36px;
+  flex-shrink: 0;
+}
+
+.news-date span {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--primary-700);
+  letter-spacing: 0.196px;
+  white-space: nowrap;
+}
+
+.news-title {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-950);
+  letter-spacing: 0.252px;
+}
+
+.news-arrow {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   OUR STORY
+   ============================================================ */
+.section-story {
+  padding: var(--section-py) var(--section-px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.section-story .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.story-video-wrapper {
+  position: relative;
+  max-width: 856px;
+  width: 100%;
+}
+
+.story-video-placeholder {
+  width: 100%;
+  aspect-ratio: 856 / 478;
+  background: var(--secondary-50);
+  border-radius: 40px;
+}
+
+.story-video-frame {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: 0;
+  pointer-events: none;
+}
+
+.story-video-frame img {
+  width: calc(100% + 8px);
+  height: auto;
+  object-fit: contain;
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  padding: 0 120px;
+  width: 100%;
+  text-align: center;
+}
+
+.story-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+.story-text p,
+.story-text-group p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-950);
+  letter-spacing: 0.252px;
+}
+
+/* ============================================================
+   PIZZA QUARTET
+   ============================================================ */
+.section-ingredients {
+  background: var(--secondary-50);
+  border-radius: 64px;
+  padding: var(--section-py) var(--section-px);
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-ingredients .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.quartet-grid {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.card-quartet {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding: 24px;
+  border-radius: 1000px 1000px 0 0;
+  overflow: hidden;
+}
+
+.card-quartet-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.card-quartet-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 1000px;
+  overflow: hidden;
+}
+
+.card-quartet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-quartet-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.card-quartet-text h3 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--primary-700);
+  letter-spacing: 0.56px;
+  width: 100%;
+}
+
+.card-quartet-text p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-950);
+  letter-spacing: 0.252px;
+}
+
+/* ============================================================
+   STEPS
+   ============================================================ */
+.section-steps {
+  background: var(--gray-0);
+  padding: var(--section-py) var(--section-px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-steps .container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.steps-row {
+  display: flex;
+  width: 100%;
+}
+
+.steps-row.left  { justify-content: flex-start; }
+.steps-row.right { justify-content: flex-end; }
+
+.card-steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  max-width: 636px;
+  width: 100%;
+  padding-top: 32px; /* space for the number badge */
+}
+
+/* Number badge */
+.step-number {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 1000px;
+  background: var(--primary-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.step-number span {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gray-0);
+  letter-spacing: 0.784px;
+}
+
+.card-steps-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 636 / 358;
+  border-radius: 32px;
+  background: var(--secondary-50);
+  overflow: hidden;
+  margin-top: 0;
+}
+
+/* Decorative frame overlay on step images */
+.card-steps-frame {
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-steps-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.card-steps > p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-950);
+  letter-spacing: 0.252px;
+  text-align: center;
+}
+
+/* ============================================================
+   PIZZA MOMENTS
+   ============================================================ */
+.section-moments {
+  padding: var(--section-py) var(--section-px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.section-moments .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.moments-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+}
+
+.review-grid {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  align-items: stretch;
+}
+
+.card-review {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  padding: 28px 24px 24px;
+  border-radius: 48px;
+  overflow: hidden;
+  background: var(--secondary-50);
+}
+
+.card-review-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.card-review-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 48px;
+  overflow: hidden;
+}
+
+.card-review-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rating */
+.rating {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.tomato-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Review text block */
+.card-review-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 0 16px 16px;
+  width: 100%;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.review-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 1000px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-name {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--primary-700);
+  letter-spacing: 0.224px;
+  flex: 1;
+}
+
+.review-date {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--primary-700);
+  letter-spacing: 0.224px;
+  text-align: right;
+}
+
+.review-body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-950);
+  letter-spacing: 0.252px;
+  max-height: 80px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 100%;
+}
+
+/* Prev / Next buttons */
+.btn-circle {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 1000px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-circle img {
+  width: 28px;
+  height: 28px;
+}
+
+.btn-prev {
+  background: var(--primary-200);
+  transition: background 0.2s ease;
+}
+.btn-prev:hover  { background: #f0b0ae; }
+.btn-prev:active { background: #e08886; }
+
+.btn-next {
+  background: var(--primary-700);
+  transition: background 0.2s ease;
+}
+.btn-next:hover  { background: #96261F; }
+.btn-next:active { background: #6B1E1A; }
+
+/* Back to top */
+.btn-back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 48px;
+  width: 64px;
+  height: 64px;
+  border-radius: 1000px;
+  background: var(--gray-0);
+  border: 2px solid var(--primary-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-back-to-top:hover {
+  background: var(--primary-700);
+}
+
+.btn-back-to-top:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.btn-back-to-top:active {
+  background: #6B1E1A;
+  border-color: #6B1E1A;
+}
+
+.btn-back-to-top img {
+  width: 28px;
+  height: 28px;
+  filter: invert(28%) sepia(61%) saturate(874%) hue-rotate(332deg) brightness(87%) contrast(101%);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--primary-700);
+  border-radius: 64px 64px 0 0;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo-pizza {
+  width: 50px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.footer-logo-text {
+  width: 110px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-0);
+  letter-spacing: 0.224px;
+  padding: 12px 0;
+  white-space: nowrap;
+}
+
+.footer-copyright {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-0);
+  letter-spacing: 0.224px;
+  text-align: center;
+  padding: 8px 0;
+}

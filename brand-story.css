@@ -1,0 +1,211 @@
+/* ============================================================
+   Brand Story Page — brand-story.css
+   ============================================================ */
+
+/* Active nav link */
+.nav-link--active {
+  color: var(--primary-700);
+}
+
+/* ===== HERO ===== */
+.bs-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bs-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.bs-hero-logo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.bs-hero-logo-pizza {
+  width: 88px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.bs-hero-logo-text {
+  width: 202px;
+  height: 88px;
+  object-fit: contain;
+}
+
+/* ===== OUR STORY ===== */
+.bs-story {
+  padding-top: calc(var(--section-py) + 88px);
+}
+
+.bs-story-text {
+  text-align: center;
+  padding: 0 120px;
+}
+
+/* ===== LOCATION ===== */
+.bs-location {
+  background: var(--secondary-50);
+  border-radius: 64px;
+  padding: var(--section-py) var(--section-px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bs-location .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.bs-map-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.bs-map {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.bs-map-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.bs-map-label {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-700);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.bs-map-address {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--gray-950);
+  flex: 1;
+}
+
+.bs-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-950);
+  white-space: nowrap;
+  padding: 12px 0;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.bs-map-link:hover {
+  color: var(--primary-700);
+}
+
+.bs-map-link img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== MADE FOR ===== */
+.bs-made-for {
+  padding: var(--section-py) var(--section-px) 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bs-made-for .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.bs-value-grid {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.bs-value-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.bs-value-icon {
+  width: 196px;
+  height: 196px;
+  border-radius: 10000px;
+  background: var(--secondary-50);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bs-value-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bs-value-text {
+  background: var(--gray-0);
+  border: 1px solid #E7E7E7;
+  border-radius: 16px;
+  padding: 12px 24px 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.bs-value-text h3 {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-950);
+  letter-spacing: 0.336px;
+}
+
+.bs-value-text p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-950);
+  letter-spacing: 0.252px;
+}

@@ -1,0 +1,351 @@
+/* ============================================================
+   Shop Page — shop.css
+   ============================================================ */
+
+.nav-link--active {
+  color: var(--primary-700);
+}
+
+.shop-main {
+  padding-top: 88px;
+  background: var(--gray-0);
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: var(--section-py) var(--section-px);
+}
+
+/* ============================================================
+   STEPS LAYOUT
+   ============================================================ */
+.shop-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.shop-step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Left: Step label */
+.step-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 306px;
+  max-width: 306px;
+}
+
+.step-word {
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1.2;
+  color: var(--gray-950);
+  letter-spacing: 0.784px;
+  white-space: nowrap;
+}
+
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--primary-700);
+  border-radius: 1000px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--gray-0);
+  letter-spacing: 0.56px;
+  flex-shrink: 0;
+}
+
+/* Right: content */
+.step-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 4px 0;
+}
+
+.step-title-row h3 {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-950);
+  letter-spacing: 0.392px;
+  white-space: nowrap;
+}
+
+.step-check-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* ============================================================
+   FLAVOR CARDS
+   ============================================================ */
+.flavor-cards {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.card-flavor {
+  flex: 1;
+  position: relative;
+  background: #F6F6F6;
+  border-radius: 48px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid transparent;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.card-flavor:hover {
+  border-color: var(--secondary-300);
+}
+
+.card-flavor.is-selected {
+  border-color: var(--primary-700);
+  background: #FFF6ED;
+}
+
+/* Check badge */
+.card-check {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background: #D1D1D1;
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.card-check img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.card-flavor.is-selected .card-check {
+  background: var(--primary-700);
+}
+
+/* Price badge */
+.card-price {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--primary-700);
+  letter-spacing: 0.392px;
+  white-space: nowrap;
+}
+
+/* Product image */
+.card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Name + desc */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.card-name {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-950);
+  letter-spacing: 0.392px;
+}
+
+.card-desc {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4F4F4F;
+  letter-spacing: 0.252px;
+}
+
+/* ============================================================
+   COMBO CARDS (Step 3)
+   ============================================================ */
+.card-combo {
+  align-items: flex-start;
+}
+
+.card-combo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Override absolute positioning for combo price/check */
+.card-combo .card-price {
+  position: static;
+}
+
+.card-combo .card-check {
+  position: static;
+}
+
+.card-combo .card-text {
+  text-align: center;
+}
+
+/* Ingredient sides */
+.card-sides {
+  display: flex;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.card-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.card-side img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.card-side span {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-950);
+  text-align: center;
+  width: 100%;
+  display: block;
+  letter-spacing: 0.196px;
+}
+
+/* ============================================================
+   BOTTOM BAR
+   ============================================================ */
+.shop-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--secondary-50);
+  border-top: 1px solid #FFEAD4;
+  padding: 16px 48px;
+}
+
+.shop-bottom-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop-total {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.shop-total-label {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--gray-950);
+}
+
+.shop-total-price {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--primary-700);
+}
+
+.shop-total-price strong {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.shop-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-700);
+  color: var(--gray-0);
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  border: none;
+  border-radius: 1000px;
+  padding: 16px 32px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+  outline: none;
+}
+
+.shop-submit-btn:hover {
+  background: #8f2922;
+}
+
+/* Add bottom padding to main so content isn't hidden behind bottom bar */
+.shop-main {
+  padding-bottom: 88px;
+}
