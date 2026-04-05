@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購物車 — Ferment at Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Noto+Sans+TC:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+  <!-- ===== TOP NAV ===== -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img class="logo-pizza" src="https://www.figma.com/api/mcp/asset/8552024e-d773-4929-8283-dfba99926c7b" alt="Pizza icon">
+        <img class="logo-text" src="https://www.figma.com/api/mcp/asset/a52e12a7-e983-4898-8b2b-3f5bc960c703" alt="Ferment at Home">
+      </a>
+      <nav class="main-menu">
+        <a href="shop.html" class="nav-link">商品列表</a>
+        <a href="brand-story.html" class="nav-link">品牌故事</a>
+        <a href="faq.html" class="nav-link">常見問題</a>
+        <a href="#" class="btn-primary">登入/註冊</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="cart-main">
+    <div class="container cart-container">
+
+      <!-- Section Title -->
+      <div class="section-title" data-animate="fade-up">
+        <h2>Shopping Cart</h2>
+        <div class="section-title-line">
+          <img src="https://www.figma.com/api/mcp/asset/0499171c-60ee-4e64-a336-f947af52ebeb" alt="">
+        </div>
+      </div>
+
+      <!-- Cart Area -->
+      <div class="cart-area" data-animate="fade-up">
+
+        <!-- Cart Items List -->
+        <div class="cart-items-card" id="cart-items">
+
+          <!-- Item 1 -->
+          <div class="cart-item" data-id="1" data-base-price="260">
+            <div class="cart-item-image">
+              <img src="https://www.figma.com/api/mcp/asset/98d6da65-1970-4992-8fd6-b63e7f6f1c66" alt="夏威夷披薩">
+            </div>
+            <div class="cart-item-name">夏威夷披薩（6寸）</div>
+            <div class="cart-item-qty">
+              <button class="qty-btn qty-minus" aria-label="減少數量">
+                <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+              </button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-plus" aria-label="增加數量">
+                <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+              </button>
+            </div>
+            <div class="cart-item-price">NT$<span class="item-price-num">260</span></div>
+            <button class="cart-item-delete" aria-label="刪除商品">
+              <img src="https://www.figma.com/api/mcp/asset/3b91d29d-fdc8-425f-8550-f6e7a7b27e55" alt="刪除">
+            </button>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="cart-item" data-id="2" data-base-price="420">
+            <div class="cart-item-image">
+              <img src="https://www.figma.com/api/mcp/asset/f203d94a-dc84-4ef5-9606-33fe5598da7a" alt="瑪格麗特披薩">
+            </div>
+            <div class="cart-item-name">瑪格麗特披薩（12寸）</div>
+            <div class="cart-item-qty">
+              <button class="qty-btn qty-minus" aria-label="減少數量">
+                <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+              </button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-plus" aria-label="增加數量">
+                <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+              </button>
+            </div>
+            <div class="cart-item-price">NT$<span class="item-price-num">420</span></div>
+            <button class="cart-item-delete" aria-label="刪除商品">
+              <img src="https://www.figma.com/api/mcp/asset/3b91d29d-fdc8-425f-8550-f6e7a7b27e55" alt="刪除">
+            </button>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="cart-item cart-item--last" data-id="3" data-base-price="360">
+            <div class="cart-item-image">
+              <img src="https://www.figma.com/api/mcp/asset/ae676d97-d9c7-4e09-845d-8f6e1d4037ba" alt="全肉總匯">
+            </div>
+            <div class="cart-item-name">全肉總匯（8寸）</div>
+            <div class="cart-item-qty">
+              <button class="qty-btn qty-minus" aria-label="減少數量">
+                <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+              </button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-plus" aria-label="增加數量">
+                <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+              </button>
+            </div>
+            <div class="cart-item-price">NT$<span class="item-price-num">360</span></div>
+            <button class="cart-item-delete" aria-label="刪除商品">
+              <img src="https://www.figma.com/api/mcp/asset/3b91d29d-fdc8-425f-8550-f6e7a7b27e55" alt="刪除">
+            </button>
+          </div>
+
+          <!-- Empty State (hidden by default) -->
+          <div class="cart-empty" id="cart-empty" style="display:none;">
+            <p>購物車目前是空的</p>
+            <a href="shop.html" class="btn-primary" style="margin-top:16px;">去選購披薩</a>
+          </div>
+
+        </div>
+
+        <!-- Total Card -->
+        <div class="cart-total-card">
+          <h3 class="cart-total-title">Total</h3>
+          <div class="cart-total-rows">
+            <div class="cart-total-row">
+              <span>小計</span>
+              <span id="subtotal-display">NT$ 1,040</span>
+            </div>
+            <div class="cart-total-row">
+              <span>運費</span>
+              <span>NT$ 100</span>
+            </div>
+          </div>
+          <div class="cart-total-divider"></div>
+          <div class="cart-total-row cart-total-row--final">
+            <span class="cart-total-label">應付金額</span>
+            <span class="cart-total-amount" id="total-display">NT$ 1,140</span>
+          </div>
+          <button class="cart-confirm-btn" id="cart-confirm">
+            <img src="https://www.figma.com/api/mcp/asset/9e826894-751b-484c-b902-a652e9124462" alt="">
+            確認付款
+          </button>
+        </div>
+
+      </div><!-- /.cart-area -->
+
+      <!-- Curved Line Separator -->
+      <div class="curved-line">
+        <img src="https://www.figma.com/api/mcp/asset/410b3df2-ca0a-4660-8f47-75d5c5e8fffd" alt="">
+      </div>
+
+      <!-- Popular Items Section -->
+      <div class="section-title" data-animate="fade-up">
+        <h2>Popular Items</h2>
+        <div class="section-title-line">
+          <img src="https://www.figma.com/api/mcp/asset/0499171c-60ee-4e64-a336-f947af52ebeb" alt="">
+        </div>
+      </div>
+
+      <div class="popular-wrapper" data-animate="fade-up">
+        <button class="btn-circle btn-prev" id="popular-prev" aria-label="上一個">
+          <img src="https://www.figma.com/api/mcp/asset/0198a809-ae51-4f4b-a131-11b704d1f9a0" alt="←">
+        </button>
+
+        <div class="popular-cards" id="popular-cards">
+
+          <!-- Product Card 1 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://www.figma.com/api/mcp/asset/ec9d2fbe-1bef-4405-8215-2fee4db18ab9" alt="起司三重奏">
+            </div>
+            <div class="product-card-text">
+              <p class="product-card-name">起司三重奏</p>
+              <p class="product-card-desc">濃郁起司控必吃</p>
+            </div>
+            <p class="product-card-price">NT$ 240</p>
+            <div class="product-card-chips">
+              <button class="size-chip size-chip--active">6寸</button>
+              <button class="size-chip">8寸</button>
+              <button class="size-chip">12寸</button>
+            </div>
+            <div class="product-card-cta">
+              <div class="product-qty-ctrl">
+                <button class="qty-btn qty-minus" aria-label="減少數量">
+                  <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+                </button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn qty-plus" aria-label="增加數量">
+                  <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+                </button>
+              </div>
+              <button class="add-to-cart-btn" aria-label="加入購物車">
+                <img src="https://www.figma.com/api/mcp/asset/9e826894-751b-484c-b902-a652e9124462" alt="加入購物車">
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://www.figma.com/api/mcp/asset/98d6da65-1970-4992-8fd6-b63e7f6f1c66" alt="夏威夷披薩">
+            </div>
+            <div class="product-card-text">
+              <p class="product-card-name">夏威夷披薩</p>
+              <p class="product-card-desc">鳳梨火腿甜鹹交織</p>
+            </div>
+            <p class="product-card-price">NT$260</p>
+            <div class="product-card-chips">
+              <button class="size-chip size-chip--active">6寸</button>
+              <button class="size-chip">8寸</button>
+              <button class="size-chip">12寸</button>
+            </div>
+            <div class="product-card-cta">
+              <div class="product-qty-ctrl">
+                <button class="qty-btn qty-minus" aria-label="減少數量">
+                  <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+                </button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn qty-plus" aria-label="增加數量">
+                  <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+                </button>
+              </div>
+              <button class="add-to-cart-btn" aria-label="加入購物車">
+                <img src="https://www.figma.com/api/mcp/asset/9e826894-751b-484c-b902-a652e9124462" alt="加入購物車">
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://www.figma.com/api/mcp/asset/f203d94a-dc84-4ef5-9606-33fe5598da7a" alt="瑪格麗特披薩">
+            </div>
+            <div class="product-card-text">
+              <p class="product-card-name">瑪格麗特披薩</p>
+              <p class="product-card-desc">番茄起司與羅勒香氣</p>
+            </div>
+            <p class="product-card-price">NT$280</p>
+            <div class="product-card-chips">
+              <button class="size-chip size-chip--active">6寸</button>
+              <button class="size-chip">8寸</button>
+              <button class="size-chip">12寸</button>
+            </div>
+            <div class="product-card-cta">
+              <div class="product-qty-ctrl">
+                <button class="qty-btn qty-minus" aria-label="減少數量">
+                  <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+                </button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn qty-plus" aria-label="增加數量">
+                  <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+                </button>
+              </div>
+              <button class="add-to-cart-btn" aria-label="加入購物車">
+                <img src="https://www.figma.com/api/mcp/asset/9e826894-751b-484c-b902-a652e9124462" alt="加入購物車">
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://www.figma.com/api/mcp/asset/ae676d97-d9c7-4e09-845d-8f6e1d4037ba" alt="全肉總匯">
+            </div>
+            <div class="product-card-text">
+              <p class="product-card-name">全肉總匯</p>
+              <p class="product-card-desc">牛肉香腸培根總匯</p>
+            </div>
+            <p class="product-card-price">NT$300</p>
+            <div class="product-card-chips">
+              <button class="size-chip size-chip--active">6寸</button>
+              <button class="size-chip">8寸</button>
+              <button class="size-chip">12寸</button>
+            </div>
+            <div class="product-card-cta">
+              <div class="product-qty-ctrl">
+                <button class="qty-btn qty-minus" aria-label="減少數量">
+                  <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+                </button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn qty-plus" aria-label="增加數量">
+                  <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+                </button>
+              </div>
+              <button class="add-to-cart-btn" aria-label="加入購物車">
+                <img src="https://www.figma.com/api/mcp/asset/9e826894-751b-484c-b902-a652e9124462" alt="加入購物車">
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /.popular-cards -->
+
+        <button class="btn-circle btn-next" id="popular-next" aria-label="下一個">
+          <img src="https://www.figma.com/api/mcp/asset/0c1ac4c5-4c30-4f84-8b13-8ac7544812d6" alt="→">
+        </button>
+      </div><!-- /.popular-wrapper -->
+
+    </div><!-- /.cart-container -->
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img class="footer-logo-pizza" src="https://www.figma.com/api/mcp/asset/e5674549-e52b-4872-af9b-56e2596138f9" alt="Pizza icon">
+        <img class="footer-logo-text" src="https://www.figma.com/api/mcp/asset/ee4c65e0-4473-428b-ae82-0670eeca9c1c" alt="Ferment at Home">
+      </div>
+      <div class="footer-bottom">
+        <nav class="footer-menu">
+          <a href="shop.html" class="footer-link">商品列表</a>
+          <a href="brand-story.html" class="footer-link">品牌故事</a>
+          <a href="faq.html" class="footer-link">常見問題</a>
+        </nav>
+        <p class="footer-copyright">© 2025 Ferment at Home Inc. All Rights Reserved.</p>
+        <nav class="footer-menu">
+          <a href="#" class="footer-link">隱私權政策</a>
+          <a href="#" class="footer-link">使用者條款</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到頂端">
+    <img src="https://www.figma.com/api/mcp/asset/60972d6b-d675-4b3a-b66f-396e0f0338f4" alt="">
+  </button>
+
+  <script>
+    /* ── Scroll animations ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    /* ── Cart Item Quantity & Total ── */
+    const SHIPPING = 100;
+
+    function getCartSubtotal() {
+      let subtotal = 0;
+      document.querySelectorAll('.cart-item:not([style*="display: none"])').forEach(item => {
+        const basePrice = parseInt(item.dataset.basePrice, 10);
+        const qty = parseInt(item.querySelector('.qty-num').textContent, 10);
+        subtotal += basePrice * qty;
+      });
+      return subtotal;
+    }
+
+    function updateCartTotal() {
+      const items = document.querySelectorAll('.cart-item');
+      const visibleItems = Array.from(items).filter(el => el.style.display !== 'none');
+      const subtotal = getCartSubtotal();
+      const total = subtotal > 0 ? subtotal + SHIPPING : 0;
+
+      document.getElementById('subtotal-display').textContent = 'NT$ ' + subtotal.toLocaleString();
+      document.getElementById('total-display').textContent = 'NT$ ' + total.toLocaleString();
+
+      // Show/hide empty state
+      const emptyEl = document.getElementById('cart-empty');
+      if (visibleItems.length === 0) {
+        emptyEl.style.display = 'flex';
+      } else {
+        emptyEl.style.display = 'none';
+      }
+    }
+
+    /* ── Add Item to Cart (from Popular Items) ── */
+    let nextCartId = 100;
+
+    function addCartItem(name, size, basePrice, qty, totalPrice, imgSrc) {
+      const cartItemsEl = document.getElementById('cart-items');
+      const emptyEl = document.getElementById('cart-empty');
+
+      // Remove last-item border from previous last item
+      const prevLast = cartItemsEl.querySelector('.cart-item--last');
+      if (prevLast) prevLast.classList.remove('cart-item--last');
+
+      const id = nextCartId++;
+      const itemEl = document.createElement('div');
+      itemEl.className = 'cart-item cart-item--last cart-item--new';
+      itemEl.dataset.id = id;
+      itemEl.dataset.basePrice = basePrice;
+      itemEl.innerHTML = `
+        <div class="cart-item-image">
+          <img src="${imgSrc}" alt="${name}">
+        </div>
+        <div class="cart-item-name">${name}（${size}）</div>
+        <div class="cart-item-qty">
+          <button class="qty-btn qty-minus" aria-label="減少數量">
+            <img src="https://www.figma.com/api/mcp/asset/6d19cf89-db0b-47cd-856d-254fcc4015b0" alt="-">
+          </button>
+          <span class="qty-num">${qty}</span>
+          <button class="qty-btn qty-plus" aria-label="增加數量">
+            <img src="https://www.figma.com/api/mcp/asset/51d904bc-73cf-4c10-9cc9-0ec2a448cc9b" alt="+">
+          </button>
+        </div>
+        <div class="cart-item-price">NT$<span class="item-price-num">${totalPrice.toLocaleString()}</span></div>
+        <button class="cart-item-delete" aria-label="刪除商品">
+          <img src="https://www.figma.com/api/mcp/asset/3b91d29d-fdc8-425f-8550-f6e7a7b27e55" alt="刪除">
+        </button>
+      `;
+
+      // Insert before empty state
+      cartItemsEl.insertBefore(itemEl, emptyEl);
+
+      // Bind qty/delete events for the new item
+      const priceEl = itemEl.querySelector('.item-price-num');
+      itemEl.querySelector('.qty-plus').addEventListener('click', () => {
+        let q = parseInt(itemEl.querySelector('.qty-num').textContent, 10);
+        q++;
+        itemEl.querySelector('.qty-num').textContent = q;
+        priceEl.textContent = (basePrice * q).toLocaleString();
+        updateCartTotal();
+      });
+      itemEl.querySelector('.qty-minus').addEventListener('click', () => {
+        let q = parseInt(itemEl.querySelector('.qty-num').textContent, 10);
+        if (q > 1) {
+          q--;
+          itemEl.querySelector('.qty-num').textContent = q;
+          priceEl.textContent = (basePrice * q).toLocaleString();
+          updateCartTotal();
+        }
+      });
+      itemEl.querySelector('.cart-item-delete').addEventListener('click', () => {
+        itemEl.style.display = 'none';
+        updateCartTotal();
+      });
+
+      // Flash highlight animation
+      requestAnimationFrame(() => {
+        itemEl.classList.add('cart-item--highlight');
+        setTimeout(() => itemEl.classList.remove('cart-item--highlight'), 800);
+      });
+
+      updateCartTotal();
+    }
+
+    /* Cart Item Qty buttons */
+    document.querySelectorAll('.cart-item').forEach(item => {
+      const minus = item.querySelector('.qty-minus');
+      const plus = item.querySelector('.qty-plus');
+      const numEl = item.querySelector('.qty-num');
+      const priceEl = item.querySelector('.item-price-num');
+      const basePrice = parseInt(item.dataset.basePrice, 10);
+
+      plus.addEventListener('click', () => {
+        let qty = parseInt(numEl.textContent, 10);
+        qty++;
+        numEl.textContent = qty;
+        priceEl.textContent = (basePrice * qty).toLocaleString();
+        updateCartTotal();
+      });
+
+      minus.addEventListener('click', () => {
+        let qty = parseInt(numEl.textContent, 10);
+        if (qty > 1) {
+          qty--;
+          numEl.textContent = qty;
+          priceEl.textContent = (basePrice * qty).toLocaleString();
+          updateCartTotal();
+        }
+      });
+
+      item.querySelector('.cart-item-delete').addEventListener('click', () => {
+        item.style.display = 'none';
+        updateCartTotal();
+      });
+    });
+
+    /* ── Product Card: size chips + qty ── */
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.querySelectorAll('.size-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          card.querySelectorAll('.size-chip').forEach(c => c.classList.remove('size-chip--active'));
+          chip.classList.add('size-chip--active');
+        });
+      });
+
+      const minus = card.querySelector('.product-qty-ctrl .qty-minus');
+      const plus = card.querySelector('.product-qty-ctrl .qty-plus');
+      const numEl = card.querySelector('.product-qty-ctrl .qty-num');
+
+      plus.addEventListener('click', () => {
+        numEl.textContent = parseInt(numEl.textContent, 10) + 1;
+      });
+
+      minus.addEventListener('click', () => {
+        const current = parseInt(numEl.textContent, 10);
+        if (current > 1) numEl.textContent = current - 1;
+      });
+
+      card.querySelector('.add-to-cart-btn').addEventListener('click', () => {
+        const name = card.querySelector('.product-card-name').textContent.trim();
+        const size = card.querySelector('.size-chip--active').textContent.trim();
+        const priceText = card.querySelector('.product-card-price').textContent.replace(/[^\d]/g, '');
+        const basePrice = parseInt(priceText, 10);
+        const qty = parseInt(card.querySelector('.product-qty-ctrl .qty-num').textContent, 10);
+        const imgSrc = card.querySelector('.product-card-image img').src;
+        const totalItemPrice = basePrice * qty;
+
+        addCartItem(name, size, basePrice, qty, totalItemPrice, imgSrc);
+
+        // Reset qty back to 1
+        card.querySelector('.product-qty-ctrl .qty-num').textContent = 1;
+
+        // Scroll to cart area
+        document.getElementById('cart-items').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* ── Popular Items prev/next (visual only, 4 items shown) ── */
+    document.getElementById('popular-prev').addEventListener('click', () => {
+      // Placeholder: carousel can be enhanced later
+    });
+    document.getElementById('popular-next').addEventListener('click', () => {
+      // Placeholder: carousel can be enhanced later
+    });
+
+    /* ── Confirm Payment ── */
+    document.getElementById('cart-confirm').addEventListener('click', () => {
+      alert('感謝您的訂購！付款功能即將上線。');
+    });
+
+    /* Init */
+    updateCartTotal();
+  </script>
+
+</body>
+</html>
