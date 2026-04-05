@@ -176,6 +176,21 @@
       /* No order data — show defaults */
       document.getElementById('result-total-amount').textContent = 'NT$ 200';
     }
+
+    /* ── 加入購物車 → 導向 cart.html ── */
+    document.querySelector('.result-add-cart').addEventListener('click', () => {
+      if (order) {
+        const pending = {
+          name: '自訂披薩',
+          size: order.selections?.size?.name || '',
+          basePrice: order.total,
+          qty: 1,
+          imgSrc: 'https://www.figma.com/api/mcp/asset/9256c881-3b89-4200-9482-b64b758b51af'
+        };
+        sessionStorage.setItem('pendingCartItem', JSON.stringify(pending));
+      }
+      window.location.href = 'cart.html';
+    });
   </script>
 
 </body>

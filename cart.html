@@ -498,15 +498,11 @@
         const basePrice = parseInt(priceText, 10);
         const qty = parseInt(card.querySelector('.product-qty-ctrl .qty-num').textContent, 10);
         const imgSrc = card.querySelector('.product-card-image img').src;
-        const totalItemPrice = basePrice * qty;
 
-        addCartItem(name, size, basePrice, qty, totalItemPrice, imgSrc);
-
-        // Reset qty back to 1
-        card.querySelector('.product-qty-ctrl .qty-num').textContent = 1;
-
-        // Scroll to cart area
-        document.getElementById('cart-items').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Save pending item to sessionStorage then redirect to top of cart page
+        const pending = { name, size, basePrice, qty, imgSrc };
+        sessionStorage.setItem('pendingCartItem', JSON.stringify(pending));
+        window.location.href = 'cart.html';
       });
     });
 
@@ -522,6 +518,15 @@
     document.getElementById('cart-confirm').addEventListener('click', () => {
       alert('感謝您的訂購！付款功能即將上線。');
     });
+
+    /* ── On load: add pending item from sessionStorage ── */
+    const pending = sessionStorage.getItem('pendingCartItem');
+    if (pending) {
+      sessionStorage.removeItem('pendingCartItem');
+      const { name, size, basePrice, qty, imgSrc } = JSON.parse(pending);
+      addCartItem(name, size, basePrice, qty, basePrice * qty, imgSrc);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     /* Init */
     updateCartTotal();
